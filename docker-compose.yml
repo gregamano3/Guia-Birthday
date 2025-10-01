@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  guia-birthday:
+    build: .
+    ports:
+      - "9022:9022"
+    container_name: guia-birthday-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
