@@ -32,4 +32,4 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 9022
 
 # Start the app with serve
-CMD ["serve", "-s", "dist", "-l", "0.0.0.0:9022"]
+CMD ["serve", "-s", "dist", "-l", "9022"]
