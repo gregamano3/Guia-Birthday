@@ -12,14 +12,14 @@ function App() {
     setShowChart(true);
     setChartPhase('chart');
     
-    // Show chart for 3 seconds, then loading for 3 seconds, then surprise
+    // Show chart for 1.5 seconds, then loading for 1.5 seconds, then surprise
     setTimeout(() => {
       setChartPhase('loading');
-    }, 3000);
+    }, 1500);
     
     setTimeout(() => {
       setShowSurprise(true);
-    }, 6000);
+    }, 3000);
   };
 
   if (showSurprise) {
@@ -337,16 +337,9 @@ function NurseChart({ chartPhase }: { chartPhase: string }) {
       <div className="min-h-screen bg-slate-100 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-lg p-8 text-center max-w-md w-full mx-4">
           <div className="mb-6">
-            <FileText className="w-16 h-16 text-blue-600 mx-auto mb-4 animate-pulse" />
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">Loading Additional Data</h2>
-            <p className="text-slate-600 mb-4">Retrieving latest patient information...</p>
-          </div>
-          
-          <div className="mb-6">
-            <div className="w-full bg-slate-200 rounded-full h-2">
-              <div className="bg-blue-600 h-2 rounded-full animate-pulse" style={{ width: "100%" }}></div>
-            </div>
-            <div className="text-sm text-slate-500 mt-2">Please wait...</div>
+            <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">Loading...</h2>
+            <p className="text-slate-600">Please wait a moment</p>
           </div>
         </div>
       </div>
